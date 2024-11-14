@@ -1,12 +1,34 @@
 package by.it_academy.jd2.finance.libs.shared_lib.exception;
 
-public class ValidationException extends ApplicationStructuredException {
+import java.util.ArrayList;
+import java.util.List;
 
-    public ValidationException(String field, String message) {
-        super(field, message);
+public class ValidationException extends ApplicationException {
+
+    private final List<ValidationStructuredException> errors;
+
+    public ValidationException() {
+        errors = new ArrayList<>();
     }
 
-    public ValidationException(String field, String message, Throwable cause) {
-        super(field, message, cause);
+    public ValidationException(ValidationStructuredException e) {
+        this();
+        errors.add(e);
+    }
+
+    public ValidationException(String field, String message) {
+        this();
+        errors.add(new ValidationStructuredException(field, message));
+    }
+
+    public ValidationException(List<ValidationStructuredException> errors) {
+        this.errors = errors;
+    }
+
+    public List<ValidationStructuredException> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(List<ApplicationStructuredException> errors) {
     }
 }
