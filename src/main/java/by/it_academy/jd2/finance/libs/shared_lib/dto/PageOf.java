@@ -1,11 +1,13 @@
 package by.it_academy.jd2.finance.libs.shared_lib.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Objects;
 
+@JsonPropertyOrder({"number", "size", "total_pages", "total_elements", "first", "number_of_elements", "last", "content"})
 public class PageOf<T> {
 
     private int number;
