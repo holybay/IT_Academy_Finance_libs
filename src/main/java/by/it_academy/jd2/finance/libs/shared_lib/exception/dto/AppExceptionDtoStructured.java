@@ -1,6 +1,5 @@
 package by.it_academy.jd2.finance.libs.shared_lib.exception.dto;
 
-import by.it_academy.jd2.finance.libs.shared_lib.exception.ApplicationStructuredException;
 import by.it_academy.jd2.finance.libs.shared_lib.exception.model.EErrorType;
 
 import java.util.ArrayList;
@@ -10,14 +9,14 @@ import java.util.Objects;
 public class AppExceptionDtoStructured {
 
     private final EErrorType logref;
-    private final List<ApplicationStructuredException> errors;
+    private final List<StructuredExceptionDto> errors;
 
     public AppExceptionDtoStructured() {
         this.logref = EErrorType.STRUCTURED_ERROR;
         this.errors = new ArrayList<>();
     }
 
-    public AppExceptionDtoStructured(List<ApplicationStructuredException> errors) {
+    public AppExceptionDtoStructured(List<StructuredExceptionDto> errors) {
         this.logref = EErrorType.STRUCTURED_ERROR;
         this.errors = errors;
     }
@@ -26,7 +25,7 @@ public class AppExceptionDtoStructured {
         return logref;
     }
 
-    public List<ApplicationStructuredException> getErrors() {
+    public List<StructuredExceptionDto> getErrors() {
         return errors;
     }
 
