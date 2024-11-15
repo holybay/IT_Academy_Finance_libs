@@ -20,6 +20,8 @@ public @interface EnumValidator {
 
     Class<? extends Enum<?>> enumClass();
 
+    String message() default "The provided value [%s] should be one of the ENUM values %s";
+
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};

@@ -20,6 +20,10 @@ public class CustomEnumValidator implements ConstraintValidator<EnumValidator, S
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext constraintValidatorContext) {
+        String defaultErrorMessage = constraintValidatorContext.getDefaultConstraintMessageTemplate();
+        String formattedErrorMessage = String.format(defaultErrorMessage, value, values);
+        constraintValidatorContext.disableDefaultConstraintViolation();
+        constraintValidatorContext.buildConstraintViolationWithTemplate(formattedErrorMessage).addConstraintViolation();
         return values.contains(value);
     }
 }
