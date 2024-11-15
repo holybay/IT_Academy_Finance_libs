@@ -1,10 +1,12 @@
 package by.it_academy.jd2.finance.libs.shared_lib.exception.dto;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 import java.util.Map;
 import java.util.Objects;
 
+@JsonPropertyOrder({"field", "message"})
 public class StructuredExceptionDto {
 
     private static final String KEY_FIELD = "field";
