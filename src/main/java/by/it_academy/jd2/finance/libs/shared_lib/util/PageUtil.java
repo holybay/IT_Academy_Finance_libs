@@ -1,7 +1,7 @@
 package by.it_academy.jd2.finance.libs.shared_lib.util;
 
 import by.it_academy.jd2.finance.libs.shared_lib.dto.PageConfig;
- import by.it_academy.jd2.finance.libs.shared_lib.dto.PageDto;
+import by.it_academy.jd2.finance.libs.shared_lib.dto.PageDto;
 import by.it_academy.jd2.finance.libs.shared_lib.exception.ValidationException;
 import by.it_academy.jd2.finance.libs.shared_lib.exception.ValidationStructuredException;
 import org.springframework.data.domain.PageRequest;
