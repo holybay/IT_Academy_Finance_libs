@@ -15,6 +15,12 @@ public class ExceptionDtoUtil {
         return errors;
     }
 
+    public static List<AppExceptionDtoSimple> getAppExceptionSimpleDto(String message) {
+        List<AppExceptionDtoSimple> errors = new ArrayList<>();
+        errors.add(new AppExceptionDtoSimple(message));
+        return errors;
+    }
+
     public static <T extends ApplicationStructuredException> List<StructuredExceptionDto> convertToStructuredExceptionDtoList(
             List<T> errors) {
         return errors.stream()
